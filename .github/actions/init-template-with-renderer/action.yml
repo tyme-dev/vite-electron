@@ -36,7 +36,7 @@ runs:
       if: inputs.renderer-template != '' && steps.check-renderer.outputs.RENDERER_EXIST == 'false'
 
     - name: Cache Dependencies
-      uses: actions/cache@v4
+      uses: actions/cache@v6
       with:
         path: node_modules
         key: npm-${{ runner.os }}-${{ inputs.renderer-template }}-${{ hashFiles('**/package.json') }}
